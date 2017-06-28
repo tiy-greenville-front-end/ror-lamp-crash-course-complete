@@ -52,7 +52,7 @@ Basics of Ruby
 
 Basics of Rails
 
- * Install RVM, Rails, and Bundle
+ * Install Ruby, Rails, and Bundle
  * Explain MVC structure
  * Explain REST architecture
  * Use Rails generate scaffold
@@ -71,4 +71,3 @@ Second Project Challenge (Intro to Databases)
 
  * Keep track of the state of the lamp (on or off)
  * Stick around for networking
- 
