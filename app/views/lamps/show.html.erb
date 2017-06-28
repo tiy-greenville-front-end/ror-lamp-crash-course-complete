@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Current State:</strong> <%= @lamp.state %>
+</p>
+
+<%= button_to "Toggle", action: "toggle" %>
+
+Default Scaffold Actions:
+
+<%= link_to 'Edit', edit_lamp_path(@lamp) %> |
+<%= link_to 'Back', lamps_path %>

@@ -1,0 +1,22 @@
+<%= form_with(model: lamp, local: true) do |form| %>
+  <% if lamp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lamp.errors.count, "error") %> prohibited this lamp from being saved:</h2>
+
+      <ul>
+      <% lamp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.check_box :state, id: :lamp_state %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
