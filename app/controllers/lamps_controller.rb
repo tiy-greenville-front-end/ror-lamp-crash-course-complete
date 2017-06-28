@@ -1,6 +1,5 @@
 require "arduino_firmata"
 
-
 class LampsController < ApplicationController
   before_action :set_lamp, only: [:show, :edit, :update, :destroy, :toggle]
 
@@ -13,6 +12,13 @@ class LampsController < ApplicationController
   # GET /lamps/1
   # GET /lamps/1.json
   def show
+    arduino = ArduinoFirmata.connect
+    
+    if @lamp.state
+      arduino.digital_write 9, true
+    else
+      arduino.digital_write 9, false
+    end
   end
 
   # GET /lamps/new
@@ -27,18 +33,10 @@ class LampsController < ApplicationController
   # POST /lamps/1/toggle
   # POST /lamps/1/toggle.json
   def toggle
-    arduino = ArduinoFirmata.connect
-
     respond_to do |format|
       new_state = !@lamp.state
 
       if @lamp.update(state: new_state)
-        if @lamp.state
-          arduino.digital_write 9, true
-        else
-          arduino.digital_write 9, false
-        end
-
         format.html { redirect_to @lamp, notice: 'Lamp was successfully updated.' }
         format.json { render :show, status: :ok, location: @lamp }
       else
