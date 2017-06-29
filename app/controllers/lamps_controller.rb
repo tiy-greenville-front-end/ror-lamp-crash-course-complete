@@ -13,16 +13,14 @@ class LampsController < ApplicationController
   # GET /lamps/1.json
   def show
     client = MQTT::Client.connect(
-    	host: 'test.mosquitto.org',
-    	port: 8883,
-    	ssl: true
+    	host: 'iot.eclipse.org',
+    	port: 1883
+    	# ssl: true
     )
 
-    topic = "lamp/dan"
+    topic = "cmnd/sonoff/POWER"
 
-    payload = {
-      state: @lamp.state
-    }.to_json
+    payload = @lamp.state ? 'ON' : 'OFF'
 
     # Publish to the topic
     client.publish(topic,  payload,  retain=false,  qos=1)
