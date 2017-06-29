@@ -1,4 +1,4 @@
-require "arduino_firmata"
+require 'mqtt'
 
 class LampsController < ApplicationController
   before_action :set_lamp, only: [:show, :edit, :update, :destroy, :toggle]
@@ -12,13 +12,20 @@ class LampsController < ApplicationController
   # GET /lamps/1
   # GET /lamps/1.json
   def show
-    arduino = ArduinoFirmata.connect
-    
-    if @lamp.state
-      arduino.digital_write 9, true
-    else
-      arduino.digital_write 9, false
-    end
+    client = MQTT::Client.connect(
+    	host: 'test.mosquitto.org',
+    	port: 8883,
+    	ssl: true
+    )
+
+    topic = "lamp/dan"
+
+    payload = {
+      state: @lamp.state
+    }.to_json
+
+    # Publish to the topic
+    client.publish(topic,  payload,  retain=false,  qos=1)
   end
 
   # GET /lamps/new
