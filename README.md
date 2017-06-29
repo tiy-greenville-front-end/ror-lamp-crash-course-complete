@@ -12,15 +12,13 @@ Attendees leave the class with a one page Ruby on Rails site that can turn a lam
 
  * Atom (text editor), download here: https://atom.io/
 
- * Course materials, download here: [GIT REPO COMING SOON]
+ * Completed project source files, download here: https://github.com/tiy-greenville-front-end/ror-lamp-crash-course-complete
 
 # Optional Requirements
 
 Hardware is optional, you can come and watch the demo even if you don't buy anything. But for those that want a complete project you'll want to buy a switch.
 
 Two options are listed below. You'll need an extension cord and the parts from option 1 __OR__ option 2.
-
-[Overview Video]() of how to assemble the hardware.
 
 ### You'll Need
 
@@ -36,9 +34,11 @@ __Option 1 - USB Based System ($16):__
 
 __Option 2 - Wifi Based System ($11):__
 
+[Reprogramming Overview Video](https://youtu.be/-JxPWA-qxAk?t=2m56s)
+
 * Wifi Switch: [$5 Sonoff](https://www.itead.cc/sonoff-wifi-wireless-switch.html)
 * FTDI Adapter to reprogram Sonoff: [$6 FTDI](https://www.amazon.com/HiLetgo-Ft232rl-Serial-Adapter-Arduino/dp/B00IJXZQ7C/)
-* __NOTE:__ This option requires reprograming the micro controller on the Sonoff, and this is __more complex__ than Option 1. This makes for a cooler project, but can be difficult as your first IoT build.
+* __NOTE:__ This option requires reprograming the microcontroller on the Sonoff, and this is __more complex__ than Option 1. This makes for a cooler project, but can be difficult as your first IoT build.
 
 Prices are listed as time of writing and exclude cost of shipping, handling, and tax.
 
